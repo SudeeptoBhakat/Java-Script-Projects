@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Replace this with your Wit.ai Server Access Token
-const accessToken = 'WDZXO7I7XNWXTNKOOKT7RIXNDJIF4KVL';
+const accessToken = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
 
 document.getElementById('sendBtn').addEventListener('click', function() {
     sendMessage();
