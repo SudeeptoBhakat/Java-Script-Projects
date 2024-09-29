@@ -1,0 +1,197 @@
+/* Default (Light Theme) */
+body {
+    background-color: #f0f0f0;
+}
+
+.chatbot-wrapper {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+.logo {
+    height: 40px; /* Adjust height for the logo */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between logo and switch */
+}
+
+.chat-window {
+    height: 300px;
+    padding: 15px;
+    background-color: #e9ecef;
+    overflow-y: auto;
+    border-top: 1px solid #dee2e6;
+    display: flex;
+    flex-direction: column; /* Stack messages vertically */
+}
+
+.chat-input {
+    display: flex;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+}
+
+.chat-input input {
+    flex: 1;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+
+.chat-input button {
+    padding: 10px 20px;
+}
+
+/* Chat bubbles */
+.user-msg {
+    align-self: flex-end; /* Align user's messages to the right */
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    width: fit-content;
+}
+
+.bot-msg {
+    align-self: flex-start; /* Align bot's messages to the left */
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    width: fit-content;
+}
+
+/* Dark Theme */
+body.dark-mode {
+    background-color: #222;
+}
+
+.dark-mode .chatbot-wrapper {
+    background-color: #333;
+}
+
+.dark-mode .header {
+    background-color: #2f4f4f;
+}
+
+.dark-mode .chat-window {
+    background-color: #444;
+}
+
+.dark-mode .chat-input {
+    background-color: #555;
+}
+
+.dark-mode .chat-input input {
+    background-color: #666;
+    color: white;
+}
+
+.dark-mode .chat-input button {
+    background-color: #28a745;
+}
+
+/* Theme Switcher */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #28a745;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+/* Mobile Styles */
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .chatbot-wrapper {
+        width: 100%;
+        height: 100vh; /* Full height for mobile */
+        border-radius: 0; /* Remove border radius */
+        margin: 0; /* Remove margin */
+        box-shadow: none; /* Remove shadow */
+    }
+
+    .header {
+        border-radius: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10; /* Keep header on top */
+    }
+
+    .chat-window {
+        height: calc(105vh - 60px - 50px); /* Adjust height considering header and input */
+        padding-top: 100px; /* Space for fixed header */
+        overflow-y: auto; /* Ensure overflow works */
+    }
+
+    .chat-input {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 10; /* Keep input on top */
+        /* padding: 10px; Reduce padding */
+    }
+
+    .chat-input input {
+        margin-right: 5px; /* Adjust margin */
+    }
+
+    .chat-input button {
+        padding: 10px 15px; /* Adjust button padding */
+    }
+}
